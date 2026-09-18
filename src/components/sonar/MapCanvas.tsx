@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 
-import { mapPalette as colors, mapHighlights, fluxGradient } from "./mapPalette";
+import { mapHighlights, fluxGradient } from "./mapPalette";
 // Seeded, anisotropic neighborhoods: each dot represents a demo audio item.
 function library(count: number) {
   let seed = 42;
@@ -98,10 +98,14 @@ export default function MapCanvas({
         );
         ctx.globalAlpha = Math.min(
           0.95,
-          0.24 + p.z * 0.5 + Math.max(0, 1 - distance / 130) * 0.2,
+          0.78 + p.z * 0.12 + Math.max(0, 1 - distance / 130) * 0.05,
         );
-        ctx.fillStyle = p.size > 1.43 ? mapHighlights[p.cluster] : colors[p.cluster];
+        ctx.fillStyle = mapHighlights[p.cluster];
         const radius = p.size * (0.55 + p.z * 0.7);
+        const brightness = ctx.globalAlpha;
+        ctx.globalAlpha = .12;
+        ctx.beginPath(); ctx.arc(x, y, radius * 2.8, 0, Math.PI * 2); ctx.fill();
+        ctx.globalAlpha = brightness;
         if (mode === "samples") ctx.fillRect(x, y, radius * 1.3, radius * 2.8);
         else {
           ctx.beginPath();

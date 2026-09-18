@@ -70,10 +70,12 @@ export function InteractiveMap() {
           const p = atmosphere[index];
           const x = p.x * cy + p.z * sy, z = -p.x * sy + p.z * cy;
           const y = p.y * cp - z * sp, depth = 1 / (1 + (p.y * sp + z * cp) * .7);
-          ctx.globalAlpha = .24 + Math.min(.32, depth * .22);
-          ctx.fillStyle = palette[p.cluster];
-          const size = p.size * depth;
-          ctx.fillRect(width/2 + x*scale*depth, height*.51 + y*scale*depth, size, size);
+          const size = Math.max(.7, p.size * depth);
+          const screenX = width/2 + x*scale*depth, screenY = height*.51 + y*scale*depth;
+          ctx.fillStyle = palette[p.cluster]; ctx.globalAlpha = .12;
+          ctx.fillRect(screenX-size, screenY-size, size*3, size*3);
+          ctx.fillStyle = mapHighlights[p.cluster]; ctx.globalAlpha = .82;
+          ctx.fillRect(screenX, screenY, size, size);
         }
       }
       for (const p of points) {
@@ -119,10 +121,10 @@ export function InteractiveMap() {
         ctx.fillStyle = palette[p.cluster];
         const radius = Math.max(.55, p.size * p.depth);
         ctx.beginPath(); ctx.arc(p.sx, p.sy, radius, 0, Math.PI * 2); ctx.fill();
-        // A sparse luminous core gives depth without per-point blur or large halos.
-        if (p.id % 7 === 0) {
+        // Every visible point has a luminous core and a restrained halo.
+        {
           ctx.globalAlpha = .16; ctx.beginPath(); ctx.arc(p.sx, p.sy, radius * 3, 0, Math.PI * 2); ctx.fill();
-          ctx.globalAlpha = .55; ctx.fillStyle = mapHighlights[p.cluster];
+          ctx.globalAlpha = .95; ctx.fillStyle = mapHighlights[p.cluster];
           ctx.beginPath(); ctx.arc(p.sx, p.sy, radius * .62, 0, Math.PI * 2); ctx.fill();
         }
       }
