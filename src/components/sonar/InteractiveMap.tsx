@@ -9,7 +9,7 @@ import { mapPalette as palette, mapHighlights, fluxGradient } from "./mapPalette
 export function InteractiveMap() {
   const canvas = useRef<HTMLCanvasElement>(null);
   const engine = useRef<{ wake: () => void; select: (id: number) => void; activity: () => void; focus: () => void } | null>(null);
-  const camera = useRef({ yaw: 0, pitch: -.12, zoom: 1, auto: true, selected: -1, hovered: -1, matches: false, focus: false, paused: false, matchDepth: 1, route: [] as number[], flow: false });
+  const camera = useRef({ yaw: 0, pitch: -.12, zoom: 1.35, auto: true, selected: -1, hovered: -1, matches: false, focus: false, paused: false, matchDepth: 1, route: [] as number[], flow: false });
   const [matchDepth, setMatchDepth] = useState(1);
   const [flow, setFlow] = useState(false);
   const [isolated, setIsolated] = useState(false);
@@ -200,8 +200,8 @@ export function InteractiveMap() {
       if (event.key === "ArrowRight") state.yaw += .12;
       if (event.key === "ArrowUp") state.pitch = Math.max(-1.1, state.pitch - .1);
       if (event.key === "ArrowDown") state.pitch = Math.min(1.1, state.pitch + .1);
-      if (["+", "=", "-"].includes(event.key)) { state.zoom = Math.max(1, Math.min(1.35, state.zoom + (event.key === "-" ? -.15 : .15))); }
-      if (event.key.toLowerCase() === "r") { state.yaw = 0; state.pitch = -.12; state.zoom = 1; state.focus = false; setIsolated(false); }
+      if (["+", "=", "-"].includes(event.key)) { state.zoom = Math.max(1.35, Math.min(1.6, state.zoom + (event.key === "-" ? -.15 : .15))); }
+      if (event.key.toLowerCase() === "r") { state.yaw = 0; state.pitch = -.12; state.zoom = 1.35; state.focus = false; setIsolated(false); }
       if (event.key === " ") { state.paused = !state.paused; stopAuto(); }
       if (event.key === "Enter") select((state.selected + 1) % mapTracks.length);
       if (event.key === "Escape") { state.selected = -1; state.focus = false; state.matches = false; setIsolated(false); setMatches(false); setSelected(null); }
@@ -220,7 +220,7 @@ export function InteractiveMap() {
     const wheel = (event: WheelEvent) => {
       if (document.activeElement !== el || event.ctrlKey) return;
       event.preventDefault(); stopAuto();
-      state.zoom = Math.max(1, Math.min(1.35, state.zoom - event.deltaY * .001)); wake();
+      state.zoom = Math.max(1.35, Math.min(1.6, state.zoom - event.deltaY * .001)); wake();
     };
     engine.current = { wake, select, activity: stopAuto, focus: () => { state.focus = !state.focus; setIsolated(state.focus); stopAuto(); wake(); } };
     el.addEventListener("wheel", wheel, { passive: false });
