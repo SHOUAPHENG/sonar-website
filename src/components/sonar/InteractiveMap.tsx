@@ -200,7 +200,7 @@ export function InteractiveMap() {
       if (event.key === "ArrowRight") state.yaw += .12;
       if (event.key === "ArrowUp") state.pitch = Math.max(-1.1, state.pitch - .1);
       if (event.key === "ArrowDown") state.pitch = Math.min(1.1, state.pitch + .1);
-      if (["+", "=", "-"].includes(event.key)) { state.zoom = Math.max(1.35, Math.min(1.6, state.zoom + (event.key === "-" ? -.15 : .15))); }
+      if (["+", "=", "-"].includes(event.key)) { state.zoom = Math.max(1.35, Math.min(2.5, state.zoom + (event.key === "-" ? -.15 : .15))); }
       if (event.key.toLowerCase() === "r") { state.yaw = 0; state.pitch = -.12; state.zoom = 1.35; state.focus = false; setIsolated(false); }
       if (event.key === " ") { state.paused = !state.paused; stopAuto(); }
       if (event.key === "Enter") select((state.selected + 1) % mapTracks.length);
@@ -220,7 +220,7 @@ export function InteractiveMap() {
     const wheel = (event: WheelEvent) => {
       if (document.activeElement !== el || event.ctrlKey) return;
       event.preventDefault(); stopAuto();
-      state.zoom = Math.max(1.35, Math.min(1.6, state.zoom - event.deltaY * .001)); wake();
+      state.zoom = Math.max(1.35, Math.min(2.5, state.zoom - event.deltaY * .001)); wake();
     };
     engine.current = { wake, select, activity: stopAuto, focus: () => { state.focus = !state.focus; setIsolated(state.focus); stopAuto(); wake(); } };
     el.addEventListener("wheel", wheel, { passive: false });
