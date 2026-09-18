@@ -1,0 +1,37 @@
+
+.sonar-interactive-map { position:absolute; inset:0; }
+.sonar-interactive-map canvas { cursor:grab; touch-action:pan-y; outline:none; }
+.sonar-interactive-map canvas:focus-visible { outline:1px solid #c2d4bb66; outline-offset:-12px; border-radius:14px; }
+.sonar-map-instructions { position:absolute; left:50%; transform:translateX(-50%); bottom:112px; width:max-content; max-width:90%; text-align:center; font-size:9px; color:#a3b8a7!important; pointer-events:none; }
+.sonar-map-instructions span { display:block; font-size:7px; color:#819888; margin-top:4px; }
+.sonar-map-controls { position:absolute; bottom:61px; left:50%; transform:translateX(-50%); display:flex; align-items:center; gap:3px; padding:5px; border:1px solid #bfd1bd30; border-radius:7px; background:#0b120feb; backdrop-filter:blur(12px); white-space:nowrap; }
+.sonar-map-controls button { border:0; color:#c9dac2; background:none; min-width:34px; min-height:34px; display:flex; gap:7px; align-items:center; justify-content:center; border-radius:4px; padding:5px 8px; font-size:9px; }
+.sonar-map-controls button:hover { background:#c2d5b81a; }
+.sonar-map-controls button:disabled { opacity:.3; cursor:default; }
+.sonar-map-controls output { font:9px monospace; min-width:34px; text-align:center; color:#9db195; }
+.sonar-map-selection { position:absolute; top:20%; right:17%; padding:16px 35px 16px 17px; background:#0b120fe8; border:1px solid #c3d8bb40; border-left:2px solid #c3d8bb; border-radius:5px; pointer-events:auto; max-width:240px; }
+.sonar-map-selection small { font:7px monospace; color:#a3b998; letter-spacing:.1em; display:block; }
+.sonar-map-selection strong { display:block; font-size:13px; font-weight:450; margin-top:8px; }
+.sonar-map-selection>span { display:block; font-size:9px; color:#9db291; margin-top:5px; }
+.sonar-map-selection .sonar-selection-close { position:absolute; top:3px; right:3px; width:28px; height:28px; border:0; background:none; color:#a8be9d; }
+.sonar-hero-map { mask-image:none; }
+.sonar-hero-map .map-coordinate { pointer-events:none; }
+@media(max-width:700px) { .sonar-map-controls { bottom:52px; gap:0; padding:4px; }.sonar-map-controls button { min-height:38px; min-width:32px; padding:5px 7px; font-size:8px; }.sonar-map-controls output { font-size:8px; min-width:28px; }.sonar-map-instructions { bottom:102px; font-size:8px; }.sonar-map-instructions span { display:none; }.sonar-map-selection { top:8%; right:17%; padding:10px 31px 10px 12px; }.sonar-map-selection strong { font-size:11px; }.sonar-map-selection>span { font-size:8px; } }
+
+.sonar-selection-actions { display:flex; gap:5px; margin-top:14px; }
+.sonar-selection-actions button { position:static; width:auto; height:30px; padding:0 9px; border:1px solid #9de8cb35; border-radius:4px; background:#5ed8ac0c; color:#c0f4df; font-size:8px; letter-spacing:.05em; }
+.sonar-selection-actions button:hover,.sonar-selection-actions button[aria-pressed=true] { background:#5ed8ac28; border-color:#6de5b875; }
+.sonar-selection-matches { margin-top:12px; border-top:1px solid #9de8cb25; padding-top:10px; }
+.sonar-selection-matches>button { position:static; display:flex; justify-content:space-between; align-items:center; width:100%; height:auto; padding:9px 0; gap:10px; background:none; border:0; color:#d3eee3; font-size:9px; text-align:left; }
+.sonar-selection-matches>button:hover { color:white; }
+.sonar-map-selection .sonar-selection-status { font-size:7px; margin-top:10px; color:#8ebca8; }
+.sonar-map-selection { max-width:280px; }
+/* Desktop application placement: track hub upper-left, actions bottom-center. */
+.sonar-map-selection{left:11%;right:auto;top:22%;padding:13px 32px 13px 13px;background:#0c121eea;border-radius:10px;max-width:255px}
+.sonar-map-selection .sonar-hub-set{position:static;display:block;width:100%;margin-top:10px;height:30px;border:1px solid #4f95d544;background:#2484c42b;color:#b7def8;border-radius:6px;font-size:10px}
+.sonar-app-actions{position:absolute;bottom:80px;left:50%;transform:translateX(-50%);display:flex;gap:4px;padding:5px;border:1px solid #bed2e629;border-radius:12px;background:linear-gradient(180deg,#1d232cf5,#0c1016f5);box-shadow:0 6px 24px #0005;white-space:nowrap}
+.sonar-app-actions button,.sonar-app-actions a{display:flex;align-items:center;justify-content:center;min-height:34px;padding:7px 12px;background:none;border:1px solid transparent;border-radius:8px;color:#c5d6e8;font-size:9px;font-weight:550;letter-spacing:.06em}
+.sonar-app-actions button:disabled{opacity:.35;cursor:default}.sonar-app-actions button[aria-pressed=true]{background:#153753;border-color:#7dc8ff66;color:#dbf0ff}.sonar-app-actions button:hover:not(:disabled),.sonar-app-actions a:hover{background:#ffffff09}
+.sonar-map-set{position:absolute;right:10%;top:20%;width:230px;padding:14px;background:#0b1320f0;border:1px solid #7894b740;border-radius:9px;font-size:10px}.sonar-map-set header{display:flex;justify-content:space-between;color:#acbfd6;letter-spacing:.1em}.sonar-map-set>div{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff10;padding:9px 0}.sonar-map-set button{border:0;background:none;color:#96b6d5;min-width:28px;min-height:28px}.sonar-map-set>small{display:block;margin-top:14px;font-size:7px;color:#7089a8}
+.sonar-live-demo{transform:none;border-color:#3b607c80;background:linear-gradient(150deg,#0a101a,#05090d);padding:23px}.sonar-live-demo-tools{display:flex;align-items:center;justify-content:space-between;margin-top:18px;gap:12px;color:#8fa4bd;font-size:8px}.sonar-live-demo-tools button{padding:6px 9px;min-height:32px;border:1px solid #7894b72b;border-radius:4px;color:#b3d6ee;background:#23456322;font-size:8px}.sonar-live-demo-tools button[aria-pressed=true]{background:#23598966}.sonar-live-demo-rows>button{display:flex;align-items:center;gap:14px;width:100%;padding:14px 0;background:none;border:0;border-bottom:1px solid #ffffff12;text-align:left;color:#ccdae8}.sonar-live-demo-rows>button:hover:not(:disabled){background:#477bb514}.sonar-live-demo-rows>button:disabled{opacity:.5;cursor:default}.sonar-live-demo-rows>button>span{flex:1}.sonar-live-demo-rows strong{display:block;font-size:12px;font-weight:450}.sonar-live-demo-rows small{font-size:9px;color:#7e9ab4;display:block}.sonar-live-demo-rows b,.sonar-live-demo-rows em{font-size:9px;font-weight:400;font-style:normal;color:#8dc2e5}.sonar-live-demo footer{line-height:1.8;color:#8498ad;font-size:8px;letter-spacing:0}
+@media(max-width:700px){.sonar-map-selection{top:3%;left:12%;max-width:220px}.sonar-app-actions{bottom:56px;gap:1px}.sonar-app-actions button,.sonar-app-actions a{font-size:8px;padding:6px 9px;min-height:38px}.sonar-map-set{top:3%;right:12%;width:220px;z-index:2}.sonar-live-demo-rows>button{gap:9px}}

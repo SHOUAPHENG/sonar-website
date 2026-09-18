@@ -1,0 +1,199 @@
+/* SONAR product homepage. Scoped to preserve existing secondary pages. */
+.sonar-site {
+  --paper: #eeefeb;
+  --muted: #8d9290;
+  --line: rgba(225, 237, 231, 0.12);
+  --mint: #b4cec0;
+  --c1: #a4bfb3;
+  --c2: #b8c5c1;
+  --c3: #c6beb1;
+  background: #080a09;
+  color: var(--paper);
+  font-family: var(--font-inter), Arial, sans-serif;
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.sonar-site * {
+  box-sizing: border-box;
+}
+.sonar-site section[id] {
+  scroll-margin-top: 100px;
+}
+.sonar-site a,
+.sonar-site button {
+  transition:
+    color 0.25s,
+    background 0.25s,
+    border-color 0.25s,
+    transform 0.3s;
+}
+.sonar-site a:focus-visible,
+.sonar-site button:focus-visible {
+  outline: 2px solid var(--mint);
+  outline-offset: 6px;
+}
+.sonar-site button {
+  font: inherit;
+}
+.sonar-site h1,
+.sonar-site h2,
+.sonar-site h3,
+.sonar-site p {
+  margin: 0;
+}
+.sonar-site h2 {
+  font-weight: 450;
+  font-size: clamp(38px, 4.4vw, 66px);
+  line-height: 1.1;
+  letter-spacing: -0.055em;
+}
+.sonar-site p {
+  color: var(--muted);
+}
+.sonar-site .sonar-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #a7b0a9;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.19em;
+  line-height: 1.5;
+}
+.sonar-status {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background: #b6cdbb;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #b6cdbb30;
+  flex-shrink: 0;
+}
+.sonar-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  background: #e4eae2;
+  color: #111711;
+  border: 1px solid #e4eae2;
+  border-radius: 5px;
+  padding: 12px 20px;
+  font-size: 12px;
+  font-weight: 550;
+  min-height: 45px;
+}
+.sonar-button:hover {
+  background: #fff;
+  border-color: #fff;
+  transform: translateY(-2px);
+}
+.sonar-button.small {
+  font-size: 11px;
+  min-height: 35px;
+  padding: 7px 13px;
+  gap: 17px;
+}
+.sonar-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 17px;
+  font-size: 12px;
+  color: #bcc3bd;
+  min-height: 44px;
+}
+.sonar-link:hover {
+  color: white;
+}
+.sonar-link:hover svg {
+  transform: translateY(2px);
+}
+.sonar-link svg {
+  transition: transform 0.25s;
+}
+.sonar-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 27px;
+}
+/* Floating navigation */
+.sonar-header {
+  position: fixed;
+  z-index: 50;
+  left: 4.3%;
+  right: 4.3%;
+  top: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  padding: 12px 18px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  transition:
+    background 0.3s,
+    border-color 0.3s,
+    backdrop-filter 0.3s;
+}
+.sonar-header.is-scrolled {
+  background: #0b0e0de8;
+  border-color: var(--line);
+  backdrop-filter: blur(18px);
+}
+.sonar-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--paper);
+  font-size: 17px;
+  letter-spacing: 0.14em;
+  font-weight: 600;
+}
+.sonar-brand img {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+}
+.sonar-header nav {
+  display: flex;
+  gap: 31px;
+  margin-left: 50px;
+}
+.sonar-header nav a {
+  font-size: 11px;
+  color: #939994;
+}
+.sonar-header nav a:hover {
+  color: white;
+}
+.sonar-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.sonar-menu {
+  display: none;
+  background: none;
+  border: 0;
+  color: white;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+}
+.sonar-skip {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background: white;
+  color: black;
+  padding: 10px;
+}
+.sonar-skip:focus {
+  top: 0;
+}

@@ -1,0 +1,28 @@
+﻿export const djPlans = [
+  { name: 'DJ Free', monthly: 0, annual: 0, purpose: 'Discover your library.', features: ['Limited Visual Map & MATCHES', 'Rekordbox import & playlists', 'AI playlist demo', 'Limited set preparation'] },
+  { name: 'DJ Core', monthly: 9.99, annual: 89, purpose: 'Organize your collection.', features: ['Visual Map & advanced filters', 'MATCHES & track-based playlists', 'Metadata sync, preview & backup', 'Limited AI playlists & transitions'] },
+  { name: 'DJ Pro', monthly: 14.99, annual: 139, purpose: 'Prepare your next set.', features: ['Everything in Core', 'Unlimited library', 'AI playlists & AI set creation', 'Transition Planner & Cue Editor', 'Live HUD preview'] },
+  { name: 'DJ Live', monthly: 19.99, annual: 189, purpose: 'Bring SONAR into the booth.', features: ['Everything in Pro', 'Full Live DJ HUD', 'Recommendations during your mix', 'Live Visual Map & Next Track', 'Priority support'] },
+] as const;
+export const djComparison = [
+  ['Visual Map', 'Limited', 'Included', 'Included', 'Included'],
+  ['Library size', 'Limited', 'High capacity', 'Unlimited', 'Unlimited'],
+  ['MATCHES / Similar Tracks', 'Limited', 'Included', 'Included', 'Included'],
+  ['Advanced Map filters', '—', 'Included', 'Included', 'Included'],
+  ['Transition Planner', '—', 'Limited', 'Included', 'Included'],
+  ['Rekordbox import', 'Included', 'Included', 'Included', 'Included'],
+  ['Rekordbox playlist reading', 'Included', 'Included', 'Included', 'Included'],
+  ['Metadata sync to Rekordbox', '—', 'Included', 'Included', 'Included'],
+  ['Preview before sync', '—', 'Included', 'Included', 'Included'],
+  ['Sync backup & safety', '—', 'Included', 'Included', 'Included'],
+  ['AI playlists', 'Demo', 'Limited', 'Included', 'Included'],
+  ['Playlist from one track', '—', 'Included', 'Included', 'Included'],
+  ['AI set creation', '—', '—', 'Included', 'Included'],
+  ['Sets & DJ preparation', 'Limited', 'Included', 'Included', 'Included'],
+  ['Cue Editor', '—', '—', 'Included', 'Included'],
+  ['Live DJ HUD', '—', '—', 'Preview', 'Full'],
+  ['Recommendations during your mix', '—', '—', '—', 'Included'],
+  ['Visual Map Live', '—', '—', '—', 'Included'],
+  ['Next Track suggestions', '—', '—', '—', 'Included'],
+  ['Priority support', '—', '—', '—', 'Included'],
+] as const;

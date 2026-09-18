@@ -1,0 +1,14 @@
+.sonar-ambient { position:fixed; inset:0; z-index:-1; pointer-events:none; overflow:hidden; }
+.sonar-ambient-light { position:absolute; width:110%; height:110%; left:-5%; top:-5%; background:radial-gradient(ellipse at 18% 35%,#769b8014,transparent 42%),radial-gradient(ellipse at 80% 72%,#869fab12,transparent 40%); animation:sonar-light-drift 24s ease-in-out infinite alternate; }
+.sonar-contours { position:absolute; width:120%; height:115%; left:-10%; top:-5%; stroke:#a9c3b5; stroke-width:.6; opacity:.12; animation:sonar-contour-drift 32s ease-in-out infinite alternate; }
+.sonar-contours path:nth-child(3n) { stroke:#c9d5de; opacity:.65; }
+.sonar-ambient-grain { position:absolute; inset:0; opacity:.1; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 150 150' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.86' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' filter='url(%23n)' opacity='.19' d='M0 0h150v150H0z'/%3E%3C/svg%3E"); }
+.sonar-ambient[data-paused=true] *, .sonar-ambient[data-hidden=true] * { animation-play-state:paused; }
+.sonar-ambient-toggle { position:fixed; z-index:40; bottom:18px; right:20px; display:flex; gap:8px; align-items:center; padding:9px 11px; border:1px solid #b8ccc11c; border-radius:5px; background:#090e0be8; color:#a6b5aa; font-size:7px!important; letter-spacing:.12em; min-height:34px; }
+.sonar-ambient-toggle:hover { border-color:#b8ccc159; color:#edf3ea; }
+.sonar-hero-stage { background:radial-gradient(ellipse at 50% 57%,#15201815,transparent 57%); }
+.sonar-hero-map { mask-image:linear-gradient(to bottom,transparent,#000 12%,#000 84%,transparent); }
+@keyframes sonar-light-drift { from { transform:translate3d(-3%,-2%,0) scale(1); } to { transform:translate3d(4%,3%,0) scale(1.08); } }
+@keyframes sonar-contour-drift { from { transform:translate3d(-2%,3%,0) rotate(-4deg); } to { transform:translate3d(3%,-3%,0) rotate(4deg); } }
+@media(max-width:700px) { .sonar-contours { opacity:.08; } .sonar-ambient-toggle { bottom:10px; right:12px; min-height:38px; } .sonar-ambient-toggle span { display:none; } }
+@media(prefers-reduced-motion:reduce) { .sonar-ambient * { animation:none!important; } .sonar-ambient-toggle { display:none; } }

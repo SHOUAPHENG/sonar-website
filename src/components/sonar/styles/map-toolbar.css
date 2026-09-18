@@ -1,0 +1,47 @@
+.sonar-app-actions{gap:5px;padding:7px;border-radius:14px;background:#0c1119f5;box-shadow:0 12px 35px #0006,inset 0 1px #ffffff08;align-items:center;max-width:calc(100% - 28px)}
+.sonar-app-actions button,.sonar-app-actions a{gap:7px;min-height:40px;padding:8px 11px;font-size:10px;transition:background .25s,border-color .25s,color .25s;cursor:pointer}
+.sonar-app-actions button:focus-visible,.sonar-app-actions a:focus-visible{outline:2px solid #8fd3ff;outline-offset:3px}
+.sonar-app-actions button:disabled{opacity:.4;cursor:not-allowed}
+.sonar-app-actions button[aria-pressed=true]{background:#13334a;border-color:#5ec2ff70;box-shadow:inset 0 1px #d5efff12}
+.sonar-app-actions b{font:9px monospace;border-radius:4px;padding:3px 5px;background:#ffffff0d;color:#91a8ba}
+.sonar-toolbar-matches{display:flex;align-items:center;gap:2px;border:1px solid #ffffff12;border-radius:9px;padding-right:3px}
+.sonar-match-depth{display:flex;align-items:center;border-left:1px solid #ffffff14;padding-left:3px}
+.sonar-app-actions .sonar-match-depth button{min-width:25px;min-height:34px;padding:4px}
+.sonar-match-depth output{font:11px monospace;color:#dcf0ff;min-width:27px;text-align:center}.sonar-match-depth output span{color:#6a7d91;font-size:9px}
+.sonar-map-provenance{position:absolute;bottom:148px;left:50%;transform:translateX(-50%);font:8px monospace;letter-spacing:.12em;color:#b2c6d5;display:flex;align-items:center;gap:8px;white-space:nowrap;pointer-events:none}
+.sonar-map-provenance>span:last-child{color:#6e8495;letter-spacing:.03em}.sonar-map-provenance .sonar-status{width:4px;height:4px}
+.sonar-map-selection{background:#090f18f5;box-shadow:0 12px 40px #0004;z-index:2}
+.sonar-map-set{z-index:3;max-height:260px;overflow:auto}
+@media(max-width:700px){
+ .sonar-app-actions{bottom:52px;padding:5px;gap:2px;flex-wrap:wrap;width:max-content;max-width:calc(100% - 30px);justify-content:center}
+ .sonar-app-actions button,.sonar-app-actions a{min-height:38px;padding:6px 7px;font-size:8px;gap:5px}
+ .sonar-app-actions svg{width:13px;height:13px}
+ .sonar-app-actions>a{display:none}
+ .sonar-toolbar-matches{order:0}.sonar-app-actions .sonar-match-depth button{min-width:22px;padding:2px}
+ .sonar-map-provenance{bottom:150px;font-size:7px;gap:5px;flex-wrap:wrap;justify-content:center;width:280px;white-space:normal}
+ .sonar-map-provenance>span:last-child{width:100%;text-align:center}
+ .sonar-map-selection{top:0;left:7%;max-width:215px}
+}
+
+/* Editorial dock, aligned with the site's warm neutral material palette. */
+.sonar-app-actions{padding:8px;gap:7px;background:linear-gradient(180deg,#1b1e1df5,#0b0e0df5);border-color:#d4dfce29;border-radius:16px;box-shadow:0 18px 50px #0007,inset 0 1px #ffffff09}
+.sonar-app-actions button,.sonar-app-actions a{color:#c5cfc6;min-height:44px;letter-spacing:.09em;border-radius:9px}
+.sonar-app-actions button[aria-pressed=true]{background:#b7d5b814;border-color:#c7e4bc4d;color:#e3f2dc;box-shadow:inset 0 1px #e7ffdc10}
+.sonar-app-actions button:hover:not(:disabled),.sonar-app-actions a:hover{background:#d9edce0d;color:#f3f6ee}
+.sonar-toolbar-matches{border-color:#c5d7c31a;background:#0002;border-radius:11px}
+.sonar-app-actions b{color:#c4dabd;background:#c3dfb812}
+.sonar-match-depth output{color:#d9e9d1}.sonar-match-depth output span{color:#7e9079}
+.sonar-map-provenance{color:#becbb7}.sonar-map-provenance>span:last-child{color:#879080}
+@media(max-width:700px){.sonar-app-actions{display:grid;grid-template-columns:auto auto auto;gap:3px;padding:6px;max-width:calc(100% - 36px)}.sonar-toolbar-matches{grid-column:1/-1;grid-row:1;justify-content:center;padding:0 8px}.sonar-app-actions button{min-height:40px}.sonar-map-provenance{bottom:158px}}
+
+/* Quiet compact dock: controls remain available without competing with the map. */
+.sonar-app-actions{gap:2px;padding:3px;border-radius:8px;background:#0c0f0ed9;border-color:#ffffff12;box-shadow:0 4px 14px #0003}
+.sonar-app-actions button,.sonar-app-actions a{min-height:30px;padding:5px 7px;gap:5px;font-size:8px;letter-spacing:.045em;border-radius:5px;color:#99a39a}
+.sonar-app-actions svg{width:12px;height:12px}
+.sonar-app-actions button[aria-pressed=true]{background:#bdcfb810;border-color:#cadac526;color:#d0deca;box-shadow:none}
+.sonar-toolbar-matches{border-color:#ffffff09;border-radius:6px;background:transparent}
+.sonar-app-actions .sonar-match-depth button{min-height:28px;min-width:22px;padding:3px}
+.sonar-match-depth output{font-size:9px;min-width:24px}.sonar-match-depth output span{font-size:8px}
+.sonar-app-actions b{font-size:8px;padding:2px 4px}
+.sonar-map-provenance{display:none}
+@media(max-width:700px){.sonar-app-actions{display:flex;flex-wrap:wrap;gap:1px;width:max-content;max-width:calc(100% - 24px);padding:3px}.sonar-toolbar-matches{padding-right:2px}.sonar-app-actions button,.sonar-app-actions a{min-height:36px;padding:5px 6px;font-size:7px}.sonar-app-actions svg{width:11px;height:11px}.sonar-app-actions .sonar-match-depth button{min-height:36px;min-width:22px}.sonar-match-depth output{min-width:22px}}

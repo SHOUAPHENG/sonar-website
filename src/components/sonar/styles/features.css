@@ -1,0 +1,53 @@
+.sonar-lab { padding-top:60px; }
+.sonar-lab-layout { display:grid; grid-template-columns:.85fr 1.15fr; gap:65px; align-items:center; }
+.sonar-lab-selector { display:flex; flex-direction:column; }
+.sonar-lab-selector>button { display:flex; gap:20px; align-items:center; text-align:left; background:none; color:#8f9c93; border:0; border-bottom:1px solid var(--line); padding:27px 12px 27px 0; position:relative; }
+.sonar-lab-selector>button:before { content:''; position:absolute; left:-18px; top:28px; bottom:28px; width:2px; background:#c4d6c5; transform:scaleY(0); transition:transform .3s; }
+.sonar-lab-selector>button[aria-pressed=true]:before { transform:scaleY(1); }
+.sonar-lab-selector>button[aria-pressed=true] { color:#e9eee4; }
+.sonar-lab-index { align-self:flex-start; margin-top:4px; font:9px monospace; color:#73837a; }
+.sonar-lab-selector small { font-size:8px; letter-spacing:.12em; color:#8b9d90; }
+.sonar-lab-selector strong { display:block; font-weight:450; font-size:21px; letter-spacing:-.035em; margin-top:7px; }
+.sonar-lab-selector p { font-size:11px; margin-top:7px; line-height:1.8; }
+.sonar-lab-selector svg { margin-left:auto; flex-shrink:0; opacity:.3; transition:transform .3s; }
+.sonar-lab-selector [aria-pressed=true] svg { transform:translateX(4px); opacity:1; }
+.sonar-lab-stage { border:1px solid #b6cdc029; background:linear-gradient(135deg,#152019b8,#0b110ee8); border-radius:9px; box-shadow:0 30px 90px #0004; overflow:hidden; }
+.sonar-lab-stage>header,.sonar-lab-stage>footer { display:flex; gap:9px; align-items:center; justify-content:space-between; padding:17px 23px; font-size:7px; letter-spacing:.12em; color:#90a394; }
+.sonar-lab-stage>header { border-bottom:1px solid var(--line); }
+.sonar-lab-stage>header>span { display:flex; align-items:center; gap:9px; }
+.sonar-lab-stage>header>small { font-size:6px; color:#728778; }
+.sonar-lab-stage>footer { border-top:1px solid var(--line); font-size:6px; }
+.sonar-lab-stage>footer>span:last-child { margin-left:auto; }
+.sonar-lab-panel { min-height:410px; padding:27px; }
+.sonar-lab-panel-title { display:flex; align-items:center; justify-content:space-between; gap:16px; }
+.sonar-lab-panel-title small,.sonar-lab-panel-title>span { font-size:7px; color:#879e8d; letter-spacing:.12em; }
+.sonar-lab-panel-title h3 { margin-top:8px; font-size:21px; letter-spacing:-.035em; font-weight:450; }
+.sonar-lab-panel-title>svg { color:#b4ccb9; }
+.sonar-set-curve { position:relative; display:flex; justify-content:space-between; padding-top:100px; font-size:6px; letter-spacing:.15em; color:#8ca991; margin:23px 0 18px; }
+.sonar-set-curve svg { position:absolute; inset:0; width:100%; height:90px; overflow:visible; }
+.sonar-set-curve path { stroke:#a8c8b2; stroke-width:1; stroke-dasharray:430; stroke-dashoffset:430; animation:sonar-draw-route 1.6s ease forwards; }
+.sonar-set-curve circle { fill:#d3e1c9; stroke:#18271c; stroke-width:5; paint-order:stroke; }
+.sonar-lab-tracks>div { display:flex; gap:13px; align-items:center; padding:13px 0; border-bottom:1px solid #abc6b015; }
+.sonar-lab-tracks>div>span { font-size:8px; color:#758b7d; }
+.sonar-lab-tracks>div>div { flex:1; }
+.sonar-lab-tracks strong { display:block; font-size:11px; font-weight:450; }
+.sonar-lab-tracks small { display:block; font-size:9px; color:#8ba392; margin-top:3px; }
+.sonar-lab-tracks b { font-size:10px; font-weight:400; color:#b6c9b7; }
+.sonar-lab-tracks b small { display:inline; font-size:6px; }
+.sonar-lab-tracks em { font:9px monospace; background:#b9d1b70c; border:1px solid #b9d1b723; padding:3px 6px; border-radius:3px; }
+.sonar-lab-tracks button { display:grid; place-items:center; width:30px; height:32px; color:#b5cbb6; background:transparent; border:0; border-radius:4px; }
+.sonar-lab-tracks button:hover { background:#b5cbb622; }
+.sonar-lab-track-end { width:30px; }
+.sonar-lab-caption { margin-top:20px!important; font-size:9px; line-height:1.7; color:#98ad9e!important; }
+.sonar-mood-options { display:flex; flex-wrap:wrap; gap:6px; margin-top:23px; }
+.sonar-mood-options button { font-size:9px; padding:7px 9px; border:1px solid #b3cab720; border-radius:4px; color:#8fa897; background:none; min-height:36px; }
+.sonar-mood-options button[aria-pressed=true] { background:#c7d9c81a; color:#e1ebda; border-color:#c7d9c84d; }
+.sonar-prompt { display:flex; gap:12px; align-items:center; padding:15px; background:#0a100c; border:1px solid #b0c5ac20; border-radius:5px; margin:16px 0 5px; color:#c5d9bc; }
+.sonar-prompt p { font-size:11px; line-height:1.7; color:#c5d0bf; }
+.sonar-sync-review { margin:28px 0; }
+.sonar-sync-review>div,.sonar-sync-review>label { display:flex; gap:16px; align-items:center; border-bottom:1px solid var(--line); padding:19px 0; font-size:11px; }
+.sonar-sync-review span { flex:1; color:#9fb4a3; }.sonar-sync-review strong { font-weight:450; color:#d8e5d0; }.sonar-sync-review del { color:#697f71; }.sonar-sync-review svg { color:#9ab7a0; }.sonar-sync-review input { accent-color:#afc8ae; width:16px; height:16px; }.sonar-review-button { width:100%; }
+@keyframes sonar-draw-route { to { stroke-dashoffset:0; } }
+@media(max-width:1000px) { .sonar-lab-layout { gap:35px; grid-template-columns:.9fr 1.1fr; }.sonar-lab-panel { padding:22px; }.sonar-lab-selector strong { font-size:19px; } }
+@media(max-width:700px) { .sonar-lab-layout { grid-template-columns:1fr; gap:24px; }.sonar-lab-selector { flex-direction:row; gap:6px; }.sonar-lab-selector>button { flex:1; padding:14px 5px; gap:0; border:1px solid var(--line); border-radius:5px; text-align:center; justify-content:center; }.sonar-lab-selector>button[aria-pressed=true] { background:#c6d5bd10; border-color:#c6d5bd50; }.sonar-lab-selector>button:before,.sonar-lab-index,.sonar-lab-selector p,.sonar-lab-selector svg { display:none; }.sonar-lab-selector small { font-size:6px; letter-spacing:.02em; }.sonar-lab-selector strong { font-size:12px; margin-top:5px; }.sonar-lab-panel { padding:20px; min-height:420px; }.sonar-lab-panel-title h3 { font-size:19px; }.sonar-lab-stage>header,.sonar-lab-stage>footer { padding:15px 18px; }.sonar-lab-stage>header>small { font-size:5px; }.sonar-lab-tracks>div { gap:9px; }.sonar-mood-options button { font-size:8px; padding:7px; }.sonar-lab-panel-title>span { display:none; } }
+@media(prefers-reduced-motion:reduce) { .sonar-set-curve path { animation:none; stroke-dashoffset:0; } }

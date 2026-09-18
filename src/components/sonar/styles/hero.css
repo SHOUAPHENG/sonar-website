@@ -1,0 +1,181 @@
+/* Cinematic map opening */
+.sonar-hero {
+  height: 145svh;
+  min-height: 1040px;
+  position: relative;
+}
+.sonar-hero-stage {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  min-height: 720px;
+  max-height: 1200px;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 50% 57%, #15201822, transparent 57%);
+}
+.sonar-hero-copy {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  padding-top: clamp(130px, 17vh, 190px);
+  pointer-events: none;
+}
+.sonar-hero-copy .sonar-eyebrow {
+  justify-content: center;
+  font-size: 9px;
+  letter-spacing: 0.23em;
+}
+.sonar-hero-copy h1 {
+  position: relative;
+  display: inline-block;
+  font-size: clamp(92px, 11vw, 160px);
+  font-weight: 450;
+  line-height: 1.18;
+  letter-spacing: -0.065em;
+  margin-top: 12px;
+}
+.sonar-title-dot {
+  font-size: 15px;
+  position: absolute;
+  right: -23px;
+  top: 27px;
+  letter-spacing: 0;
+  color: #97a098;
+}
+.sonar-hero-copy .sonar-hero-tagline {
+  font-size: clamp(23px, 2.5vw, 34px);
+  letter-spacing: -0.045em;
+  color: #e1e7df;
+}
+.sonar-hero-description {
+  font-size: 12px;
+  line-height: 1.8;
+  margin-top: 13px !important;
+  color: #939b93 !important;
+}
+.mobile-break {
+  display: none;
+}
+.sonar-hero-copy a {
+  pointer-events: auto;
+}
+.sonar-hero-map {
+  position: absolute;
+  inset: 40% -5% 0;
+  transform-origin: 50% 58%;
+}
+.sonar-map-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.map-coordinate {
+  position: absolute;
+  font-size: 8px;
+  font-family: monospace;
+  letter-spacing: 0.13em;
+  color: #828c82;
+}
+.coord-left {
+  left: 20%;
+  top: 28%;
+}
+.coord-right {
+  right: 15%;
+  top: 65%;
+}
+.map-track {
+  position: absolute;
+  left: 54%;
+  top: 48%;
+  display: flex;
+  align-items: flex-start;
+  pointer-events: none;
+}
+.map-track-anchor {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #ebf4dd;
+  box-shadow:
+    0 0 0 5px #b6cfac13,
+    0 0 0 15px #b6cfac08;
+}
+.map-track-line {
+  width: 40px;
+  height: 40px;
+  border-top: 1px solid #b5c8ae55;
+  border-right: 1px solid #b5c8ae55;
+  transform: skewY(-34deg);
+  margin-top: -13px;
+}
+.map-track > div {
+  margin: 8px 0 0 12px;
+  padding: 9px 15px;
+  background: #0b0f0da8;
+  border-left: 1px solid #adbfab55;
+  backdrop-filter: blur(6px);
+}
+.map-track .sonar-eyebrow {
+  font-size: 7px;
+  letter-spacing: 0.12em;
+}
+.map-track strong {
+  display: block;
+  font-size: 10px;
+  font-weight: 450;
+  margin-top: 7px;
+}
+.map-track strong span {
+  color: #89918b;
+}
+.map-track small {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: monospace;
+  font-size: 8px;
+  color: #a4b1a5;
+  margin-top: 7px;
+}
+.map-track small i,
+.sonar-hero-bottom i {
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: #8b958b;
+}
+.sonar-hero-bottom {
+  position: absolute;
+  bottom: 30px;
+  left: 5.5%;
+  right: 5.5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #798279;
+  font-size: 8px;
+  letter-spacing: 0.12em;
+}
+.sonar-hero-bottom > span,
+.sonar-hero-bottom a {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+.sonar-hero-bottom a {
+  color: #b5beb4;
+}
+.sonar-hero-discovery {
+  position: absolute;
+  top: 42%;
+  left: 9%;
+  font-size: clamp(24px, 3vw, 44px);
+  letter-spacing: -0.04em;
+  line-height: 1.25;
+  color: white !important;
+  pointer-events: none;
+}
+.sonar-hero-discovery span {
+  color: #9aa89c;
+}
