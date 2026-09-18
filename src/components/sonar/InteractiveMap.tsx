@@ -30,12 +30,21 @@ export function InteractiveMap() {
     let seed = 718;
     const random = () => ((seed = seed * 16807 % 2147483647) - 1) / 2147483646;
     // Illustrative density only; selectable points remain the real analyzed samples.
-    const atmosphere = Array.from({length: compact.matches ? 3500 : 18000}, (_, index) => {
+    const atmosphere = Array.from({length: compact.matches ? 5000 : 22000}, (_, index) => {
       const anchor = mapTracks[index % mapTracks.length];
+      // Interleave wider neighborhoods and bridges, so density fills gaps at every scroll level.
+      const bridge = index % 3 === 0;
+      const target = mapTracks[neighbors[anchor.id][bridge ? 19 : 3]];
+      const blend = bridge ? random() : 0;
       const angle = random() * Math.PI * 2;
-      const radius = Math.sqrt(-2 * Math.log(Math.max(.001, random()))) * .019;
-      return {x: anchor.x + Math.cos(angle)*radius, y: anchor.y + Math.sin(angle)*radius*.7,
-        z: anchor.z + (random()-.5)*.06, cluster: anchor.cluster, size: .35 + random()*.65};
+      const radius = Math.sqrt(-2 * Math.log(Math.max(.001, random()))) * (bridge ? .026 : .037);
+      return {
+        x: anchor.x + (target.x-anchor.x)*blend + Math.cos(angle)*radius,
+        y: anchor.y + (target.y-anchor.y)*blend + Math.sin(angle)*radius*.85,
+        z: anchor.z + (target.z-anchor.z)*blend + (random()-.5)*.09,
+        cluster: blend > .5 ? target.cluster : anchor.cluster,
+        size: .35 + random()*.65,
+      };
     });
     let width = 0, height = 0, raf = 0, visible = false, previousTime = 0;
     let drag: { id: number; x: number; y: number; moved: boolean; startX: number; startY: number } | null = null;
@@ -64,8 +73,8 @@ export function InteractiveMap() {
       const hero = el.closest('section');
       const progress = media.matches ? 1 : Math.min(1, Math.max(0, -(hero?.getBoundingClientRect().top ?? 0) / Math.max(1, window.innerHeight * .7)));
       if (!state.focus) {
-        const budget = compact.matches ? Math.min(3500, atmosphere.length) : atmosphere.length;
-        const count = Math.floor(budget * (.45 + progress * .55));
+        const budget = compact.matches ? Math.min(5000, atmosphere.length) : atmosphere.length;
+        const count = Math.floor(budget * (.8 + progress * .2));
         for (let index = 0; index < count; index++) {
           const p = atmosphere[index];
           const x = p.x * cy + p.z * sy, z = -p.x * sy + p.z * cy;
