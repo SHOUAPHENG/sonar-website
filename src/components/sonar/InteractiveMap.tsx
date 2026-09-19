@@ -80,7 +80,7 @@ export function InteractiveMap() {
           const x = p.x * cy + p.z * sy, z = -p.x * sy + p.z * cy;
           const y = p.y * cp - z * sp, depth = 1 / (1 + (p.y * sp + z * cp) * .7);
           const size = Math.max(.7, p.size * depth);
-          const screenX = width/2 + x*scale*depth, screenY = height*.51 + y*scale*depth;
+          const screenX = width/2 + x*scale*depth, screenY = height*.38 + y*scale*depth;
           ctx.fillStyle = palette[p.cluster]; ctx.globalAlpha = .12;
           ctx.fillRect(screenX-size, screenY-size, size*3, size*3);
           ctx.fillStyle = mapHighlights[p.cluster]; ctx.globalAlpha = .82;
@@ -95,7 +95,7 @@ export function InteractiveMap() {
         const depth = py * sp + z * cp;
         p.depth = 1 / (1 + depth * .7);
         p.sx = width / 2 + x * scale * p.depth;
-        p.sy = height * .51 + y * scale * p.depth;
+        p.sy = height * .38 + y * scale * p.depth;
       }
       const matchIds = relatedIds(state.selected, state.matchDepth);
       const included = (id: number) => id === state.selected || matchIds.includes(id);

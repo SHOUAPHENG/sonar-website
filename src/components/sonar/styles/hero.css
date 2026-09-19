@@ -16,6 +16,7 @@
 .sonar-hero-copy {
   position: relative;
   z-index: 3;
+  background: transparent;
   text-align: center;
   padding-top: clamp(105px, 12vh, 150px);
   pointer-events: none;
@@ -61,7 +62,7 @@
 }
 .sonar-hero-map {
   position: absolute;
-  inset: 48% -5% 0;
+  inset: 0 -5% 0;
   transform-origin: 50% 58%;
 }
 .sonar-map-canvas {
