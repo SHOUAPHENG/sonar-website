@@ -1,12 +1,12 @@
 @media (min-width: 1600px) {
   .sonar-hero-map {
-    inset: 38% 0 0;
+    inset: 46% 0 0;
   }
   .sonar-hero-copy {
     padding-top: 16vh;
   }
   .sonar-hero-copy h1 {
-    font-size: 170px;
+    font-size: 148px;
   }
 }
 @media (max-width: 1050px) {
@@ -117,14 +117,14 @@
     position: relative;
   }
   .sonar-hero-copy {
-    padding-top: 140px;
+    padding-top: 110px;
   }
   .sonar-hero-copy .sonar-eyebrow {
     font-size: 7px;
     letter-spacing: 0.19em;
   }
   .sonar-hero-copy h1 {
-    font-size: 96px;
+    font-size: clamp(46px, 14vw, 88px);
     margin-top: 18px;
   }
   .sonar-title-dot {
@@ -156,7 +156,7 @@
     gap: 9px;
   }
   .sonar-hero-map {
-    inset: 47% -12% 2%;
+    inset: 52% -12% 2%;
   }
   .coord-left {
     top: 29%;

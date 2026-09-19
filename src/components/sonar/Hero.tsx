@@ -6,6 +6,7 @@ import {
   useReducedMotion,
   useScroll,
   useTransform,
+  useMotionValueEvent,
 } from "framer-motion";
 import { ArrowDown, ArrowUpRight, ScanLine } from "lucide-react";
 import { InteractiveMap } from "./InteractiveMap";
@@ -22,19 +23,21 @@ export function Hero() {
     return () => media.removeEventListener('change', update);
   }, []);
   const staticHero = reduce || compact;
+  const [copyHidden, setCopyHidden] = useState(false);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end end"],
   });
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.22]);
+  useMotionValueEvent(scrollYProgress, "change", value => setCopyHidden(value > .55));
   const y = useTransform(scrollYProgress, [0, 1], [0, -65]);
-  const opacity = useTransform(scrollYProgress, [0, 0.85], [1, 0.15]);
+  const opacity = useTransform(scrollYProgress, [0, 0.55], [1, 0]);
   const detailOpacity = useTransform(scrollYProgress, [0.25, 0.8], [0, 1]);
   return (
     <section className="sonar-hero" ref={ref} aria-labelledby="hero-title">
       <div className="sonar-hero-stage">
         <motion.div
           className="sonar-hero-copy"
+          inert={!staticHero && copyHidden ? true : undefined}
           style={staticHero ? {} : { y, opacity }}
         >
           <p className="sonar-eyebrow">
@@ -62,7 +65,7 @@ export function Hero() {
         </motion.div>
         <motion.div
           className="sonar-hero-map"
-          style={staticHero ? {} : { scale, y }}
+          style={staticHero ? {} : { y }}
         >
           <InteractiveMap />
           <span className="map-coordinate coord-left">

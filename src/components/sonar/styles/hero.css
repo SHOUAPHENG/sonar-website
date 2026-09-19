@@ -17,7 +17,7 @@
   position: relative;
   z-index: 3;
   text-align: center;
-  padding-top: clamp(130px, 17vh, 190px);
+  padding-top: clamp(105px, 12vh, 150px);
   pointer-events: none;
 }
 .sonar-hero-copy .sonar-eyebrow {
@@ -28,10 +28,10 @@
 .sonar-hero-copy h1 {
   position: relative;
   display: inline-block;
-  font-size: clamp(92px, 11vw, 160px);
+  font-size: clamp(76px, 9vw, 132px);
   font-weight: 450;
   line-height: 1.18;
-  letter-spacing: -0.065em;
+  letter-spacing: 0.14em; text-indent: 0.14em;
   margin-top: 12px;
 }
 .sonar-title-dot {
@@ -61,7 +61,7 @@
 }
 .sonar-hero-map {
   position: absolute;
-  inset: 40% -5% 0;
+  inset: 48% -5% 0;
   transform-origin: 50% 58%;
 }
 .sonar-map-canvas {
@@ -168,7 +168,7 @@
 }
 .sonar-hero-discovery {
   position: absolute;
-  top: 42%;
+  top: 17%;
   left: 9%;
   font-size: clamp(24px, 3vw, 44px);
   letter-spacing: -0.04em;
